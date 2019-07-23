@@ -34,4 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: yarn test --reporter xunit --reporter-options output=reports/mocha/results.xml
+
+      - store_test_results:
+          path: reports
