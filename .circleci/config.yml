@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
       # specify the version you desire here
       - image: circleci/node:10
@@ -38,3 +38,10 @@ jobs:
 
       - store_test_results:
           path: reports
+
+workflows:
+  version: 2
+
+  Pull Request:
+    jobs:
+      - test
