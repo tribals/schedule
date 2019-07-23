@@ -7,14 +7,19 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "coveralls": "^3.0.5",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
   },
   "dependencies": {
     "esm": "^3.2.25",
     "module-alias": "^2.2.0"
   },
   "scripts": {
-    "test": "mocha --require esm --require module-alias/register"
+    "test": "mocha --require esm --require module-alias/register",
+    "test-ci": "mocha --require esm --require module-alias/register --reporter xunit --reporter-options output=reports/mocha/results.xml",
+    "coverage": "nyc --require esm --require module-alias/register mocha",
+    "coverage-ci": "nyc --require esm --require module-alias/register --reporter lcovonly mocha"
   },
   "_moduleAliases": {
     "@": "src"
