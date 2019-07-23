@@ -71,7 +71,7 @@ jobs:
       # run tests!
       - run: yarn coverage-ci
 
-      - upload: yarn run coveralls < coverage/lcov.info
+      - run: yarn run coveralls < coverage/lcov.info
 
       - store_artifacts:
           path: coverage/lcov-report
