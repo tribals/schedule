@@ -19,7 +19,7 @@
     "test": "mocha --require esm --require module-alias/register",
     "test-ci": "mocha --require esm --require module-alias/register --reporter xunit --reporter-options output=reports/mocha/results.xml",
     "coverage": "nyc --require esm --require module-alias/register mocha",
-    "coverage-ci": "nyc --require esm --require module-alias/register --reporter lcov mocha"
+    "coverage-ci": "nyc --require esm --require module-alias/register --reporter lcovonly mocha"
   },
   "_moduleAliases": {
     "@": "src"

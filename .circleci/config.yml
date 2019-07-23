@@ -73,9 +73,6 @@ jobs:
 
       - run: yarn run coveralls < coverage/lcov.info
 
-      - store_artifacts:
-          path: coverage/lcov-report
-
 workflows:
   version: 2
 
