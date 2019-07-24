@@ -1,19 +1,18 @@
-'use strict';
+'use strict'
 
 import { assert } from 'chai'
 
 import { Schedule, Months, Shift } from '@/schedule'
 
-
-describe('Schedule', function() {
-  it('is empty when created', function() {
+describe('Schedule', function () {
+  it('is empty when created', function () {
     const schedule = new Schedule(Months.JULY)
 
     assert.isTrue(schedule.getSchedule().every(day => day.equals(new Shift('OFF'))))
   })
 
-  describe('.addShift()', function() {
-    it('adds shift to schedule', function() {
+  describe('.addShift()', function () {
+    it('adds shift to schedule', function () {
       const schedule = new Schedule(Months.JULY)
 
       schedule.addShift(1, new Shift('DAY'))
@@ -22,8 +21,8 @@ describe('Schedule', function() {
     })
   })
 
-  describe('.removeShift()', function() {
-    it('removes shift from schedule', function() {
+  describe('.removeShift()', function () {
+    it('removes shift from schedule', function () {
       const schedule = new Schedule(Months.JULY)
 
       schedule.addShift(1, new Shift('DAY'))
