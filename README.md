@@ -1,8 +1,9 @@
 [![CircleCI](https://circleci.com/gh/tribals/schedule.svg?style=svg)](https://circleci.com/gh/tribals/schedule)
 [![Coverage Status](https://coveralls.io/repos/github/tribals/schedule/badge.svg?branch=develop)](https://coveralls.io/github/tribals/schedule?branch=develop)
+
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-**Schedule** your shift work intuitively. Choose between daily shifts or day/night shifts. Then download `.ics` and import it to your Calendar app.
+**Schedule** your shift work very easily. Choose between daily shifts or day/night shifts. Then download `.ics` and import it to your Calendar app.
 
 Clone the repository:
 
