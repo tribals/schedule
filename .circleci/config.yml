@@ -67,10 +67,22 @@ jobs:
             - run: yarn coverage-ci
             - run: yarn run coveralls < coverage/lcov.info
 
+  style:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - exec:
+         cmds:
+          - run: yarn style-ci
+
 workflows:
   version: 2
 
   Pull Request:
     jobs:
+      - style
       - test
       - coverage

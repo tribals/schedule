@@ -1,11 +1,10 @@
-'use strict';
+'use strict'
 
 import { Enum } from '@/enum'
 
-
-export function Schedule(month) {
+export function Schedule (month) {
   this._month = month
-  this._schedule = new Array()
+  this._schedule = []
 
   const monthDays = _monthDays(month)
 
@@ -14,25 +13,25 @@ export function Schedule(month) {
   }
 }
 
-Schedule.prototype.getSchedule = function() {
+Schedule.prototype.getSchedule = function () {
   return this._schedule
 }
 
-Schedule.prototype.addShift = function(dayOfMonth, shift) {
+Schedule.prototype.addShift = function (dayOfMonth, shift) {
   this._schedule[dayOfMonth] = shift
 }
 
-Schedule.prototype.removeShift = function(dayOfMonth) {
+Schedule.prototype.removeShift = function (dayOfMonth) {
   this._schedule[dayOfMonth] = new Shift('OFF')
 }
 
-function _monthDays(month) {
-  const nextMonth = month + 1;
+function _monthDays (month) {
+  const nextMonth = month + 1
 
   return new Date(_getCurrentYear(), nextMonth, 0).getDate()
 }
 
-function _getCurrentYear() {
+function _getCurrentYear () {
   return new Date().getFullYear()
 }
 
@@ -48,14 +47,13 @@ export const Months = new Enum({
   SEPTEMBER: 8,
   OCTOBER: 9,
   NOVEMBER: 10,
-  DECEMBER: 11,
+  DECEMBER: 11
 })
 
-export function Shift(value) {
+export function Shift (value) {
   this._value = value
 }
 
-
-Shift.prototype.equals = function(other) {
+Shift.prototype.equals = function (other) {
   return this._value === other._value
 }
